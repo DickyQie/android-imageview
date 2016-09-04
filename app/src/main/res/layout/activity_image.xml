@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+    
+        <com.imageviewdrawdemo.ZQImageViewRoundOval
+            android:id="@+id/cicle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/qie" >
+            </com.imageviewdrawdemo.ZQImageViewRoundOval>
+
+        <com.imageviewdrawdemo.ZQImageViewRoundOval
+            android:id="@+id/roundRect"
+            android:layout_width="286dp"
+            android:layout_height="190dp"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/l1">
+            </com.imageviewdrawdemo.ZQImageViewRoundOval>
+
+        <com.imageviewdrawdemo.ZQImageViewRoundOval
+            android:id="@+id/oval"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:src="@mipmap/l2" >
+            </com.imageviewdrawdemo.ZQImageViewRoundOval>
+
+</LinearLayout>
