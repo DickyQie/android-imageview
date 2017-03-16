@@ -1,21 +1,20 @@
 # Android之修改用户头像并上传服务器（实现手机拍照和SD卡选择上传）
-<div class="edit-box">
-				<textarea name="content" class="editor-content"  id="ckeditor" > &lt;p&gt;写了这么多个的APP，最近才把他这个功能写上来，就抽取其中的&lt;span style="color:#800000"&gt;&lt;strong&gt;用户修改头像的相关操作&lt;/strong&gt;&lt;/span&gt;这个功能写了这篇博客，来与大家分享，希望对你有所帮助。&lt;/p&gt; 
-&lt;p&gt;&lt;span style="color:#800000"&gt;&lt;span style="color:#000000"&gt;案例包含了:&lt;/span&gt;&lt;/span&gt;&lt;/p&gt; 
-&lt;ol&gt; 
- &lt;li&gt;&lt;span style="color:#800000"&gt;&lt;span style="color:#000000"&gt;Xutil图片上传&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
- &lt;li&gt;&lt;span style="color:#800000"&gt;&lt;span style="color:#000000"&gt;拍照和SD卡选择&lt;span style="color:#800000"&gt;&lt;span style="color:#000000"&gt;图片&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
- &lt;li&gt;&lt;span style="color:#800000"&gt;&lt;span style="color:#000000"&gt;图片缓存和界面逻辑处理&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
- &lt;li&gt;&lt;span style="color:#800000"&gt;&lt;span style="color:#000000"&gt;图片压缩和图片处理&lt;/span&gt;&lt;/span&gt;&lt;/li&gt; 
- &lt;li&gt;自定义圆形头像&lt;/li&gt; 
-&lt;/ol&gt; 
-&lt;p&gt;&lt;a href="http://download.csdn.net/detail/dickyqie/9662223" target="_blank" rel="nofollow"&gt;XUtils.Jar 下载&lt;/a&gt;&lt;/p&gt; 
-&lt;p&gt;其他图片上传方式请看博客&amp;nbsp; ：&lt;a href="http://www.cnblogs.com/zhangqie/p/6211752.html" rel="nofollow"&gt;Volley-XUtils-OkHttp三种方式实现单张多张图片上传&lt;/a&gt;&lt;/p&gt; 
-&lt;p&gt;效果图： （注：&lt;span style="color:#800000"&gt;模拟器没拍照功能，效果图只有SD卡上传&lt;/span&gt;，&lt;span style="color:#800000"&gt;&lt;strong&gt;手机测试拍照上传也是可以的&lt;/strong&gt;&lt;/span&gt;）&lt;/p&gt; 
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;img alt="" src="https://static.oschina.net/uploads/img/201703/16174940_LeCK.gif"&gt;&lt;/p&gt; 
-&lt;p&gt;代码：&lt;/p&gt; 
-&lt;p&gt;MainActivity.java&lt;/p&gt; 
-&lt;pre&gt;&lt;code class="language-java"&gt;public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+  <p>写了这么多个的APP，最近才把他这个功能写上来，就抽取其中的<span style="color:#800000"><strong>用户修改头像的相关操作</strong></span>这个功能写了这篇博客，来与大家分享，希望对你有所帮助。</p> 
+<p><span style="color:#800000"><span style="color:#000000">案例包含了:</span></span></p> 
+<ol> 
+ <li><span style="color:#800000"><span style="color:#000000">Xutil图片上传</span></span></li> 
+ <li><span style="color:#800000"><span style="color:#000000">拍照和SD卡选择<span style="color:#800000"><span style="color:#000000">图片</span></span></span></span></li> 
+ <li><span style="color:#800000"><span style="color:#000000">图片缓存和界面逻辑处理</span></span></li> 
+ <li><span style="color:#800000"><span style="color:#000000">图片压缩和图片处理</span></span></li> 
+ <li>自定义圆形头像</li> 
+</ol> 
+<p><a href="http://download.csdn.net/detail/dickyqie/9662223" target="_blank" rel="nofollow">XUtils.Jar 下载</a></p> 
+<p>其他图片上传方式请看博客&nbsp; ：<a href="http://www.cnblogs.com/zhangqie/p/6211752.html" rel="nofollow">Volley-XUtils-OkHttp三种方式实现单张多张图片上传</a></p> 
+<p>效果图： （注：<span style="color:#800000">模拟器没拍照功能，效果图只有SD卡上传</span>，<span style="color:#800000"><strong>手机测试拍照上传也是可以的</strong></span>）</p> 
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt="" src="https://static.oschina.net/uploads/img/201703/16174940_LeCK.gif"></p> 
+<p>代码：</p> 
+<p>MainActivity.java</p> 
+<pre><code class="language-java">public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ZQRoundOvalImageView zqRoundOvalImageView;
     ACache aCache;
@@ -81,9 +80,9 @@
                     }
                 });
     }
-}&lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;&amp;nbsp;SettingActivity.Java&lt;/p&gt; 
-&lt;pre&gt;&lt;code class="language-java"&gt;public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
+}</code></pre> 
+<p>&nbsp;SettingActivity.Java</p> 
+<pre><code class="language-java">public class SettingActivity extends AppCompatActivity implements View.OnClickListener {
 
     String URL = "url";
     TextView homeTopName;
@@ -184,8 +183,8 @@
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1 &amp;amp;&amp;amp; resultCode == Activity.RESULT_OK
-                &amp;amp;&amp;amp; null != data) {
+        if (requestCode == 1 &amp;&amp; resultCode == Activity.RESULT_OK
+                &amp;&amp; null != data) {
             String sdState = Environment.getExternalStorageState();
             if (!sdState.equals(Environment.MEDIA_MOUNTED)) {
                 return;
@@ -218,8 +217,8 @@
             zqRoundOvalImageView.setImageBitmap(bmp);
             staffFileupload(new File(filename));
         }
-        if (requestCode == 2 &amp;amp;&amp;amp; resultCode == Activity.RESULT_OK
-                &amp;amp;&amp;amp; null != data) {
+        if (requestCode == 2 &amp;&amp; resultCode == Activity.RESULT_OK
+                &amp;&amp; null != data) {
             try {
                 Uri selectedImage = data.getData();
                 String[] filePathColumns = {MediaStore.Images.Media.DATA};
@@ -260,7 +259,7 @@
         }
         HttpUtils http = new HttpUtils();
         http.send(HttpRequest.HttpMethod.POST, URL, MYUPDATEIMG(file),
-                new RequestCallBack&amp;lt;String&amp;gt;() {
+                new RequestCallBack&lt;String&gt;() {
 
                     @Override
                     public void onFailure(HttpException arg0, String arg1) {
@@ -268,13 +267,13 @@
                     }
 
                     @Override
-                    public void onSuccess(ResponseInfo&amp;lt;String&amp;gt; arg0) {
+                    public void onSuccess(ResponseInfo&lt;String&gt; arg0) {
                         JSONObject jsonobj;
                         try {
                             jsonobj = new JSONObject(arg0.result.toString());
                             String errno = jsonobj.getString("errno");
                             String error = jsonobj.getString("error");
-                            if (errno.equals("0") &amp;amp;&amp;amp; error.equals("success")) {
+                            if (errno.equals("0") &amp;&amp; error.equals("success")) {
                                 JSONArray jsonarray = jsonobj.getJSONArray("data");
                                 JSONObject jsonobjq = jsonarray.getJSONObject(0);
                                 urlsf = jsonobjq.getString("url");
@@ -316,29 +315,28 @@
     }
 }
 
-复制代码&lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;AndroidManifest.xml权限&lt;/p&gt; 
-&lt;pre&gt;&lt;code class="language-html"&gt;    &amp;lt;uses-permission android:name="android.permission.INTERNET" /&amp;gt;
-    &amp;lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&amp;gt;
-    &amp;lt;!-- SD卡权限 --&amp;gt;
-    &amp;lt;uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /&amp;gt;
-    &amp;lt;!-- 定位 --&amp;gt;
-    &amp;lt;!-- 用于进行网络定位 --&amp;gt;
-    &amp;lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" &amp;gt;
-    &amp;lt;/uses-permission&amp;gt;
-    &amp;lt;uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"&amp;gt;
-    &amp;lt;/uses-permission&amp;gt;
-    &amp;lt;!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 --&amp;gt;
-    &amp;lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE" &amp;gt;
-    &amp;lt;/uses-permission&amp;gt;
-    &amp;lt;!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 --&amp;gt;
-    &amp;lt;uses-permission android:name="android.permission.CHANGE_WIFI_STATE" &amp;gt;
-    &amp;lt;/uses-permission&amp;gt;
-    &amp;lt;!-- 用于读取手机当前的状态 --&amp;gt;
-    &amp;lt;uses-permission android:name="android.permission.READ_PHONE_STATE" &amp;gt;
-    &amp;lt;/uses-permission&amp;gt;
-    &amp;lt;!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 --&amp;gt;
-    &amp;lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" &amp;gt;
-    &amp;lt;/uses-permission&amp;gt;&lt;/code&gt;&lt;/pre&gt; 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt; </textarea>
-			</div>
+复制代码</code></pre> 
+<p>AndroidManifest.xml权限</p> 
+<pre><code class="language-html">    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+    &lt;!-- SD卡权限 --&gt;
+    &lt;uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /&gt;
+    &lt;!-- 定位 --&gt;
+    &lt;!-- 用于进行网络定位 --&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" &gt;
+    &lt;/uses-permission&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"&gt;
+    &lt;/uses-permission&gt;
+    &lt;!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 --&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE" &gt;
+    &lt;/uses-permission&gt;
+    &lt;!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 --&gt;
+    &lt;uses-permission android:name="android.permission.CHANGE_WIFI_STATE" &gt;
+    &lt;/uses-permission&gt;
+    &lt;!-- 用于读取手机当前的状态 --&gt;
+    &lt;uses-permission android:name="android.permission.READ_PHONE_STATE" &gt;
+    &lt;/uses-permission&gt;
+    &lt;!-- 写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据 --&gt;
+    &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" &gt;
+    &lt;/uses-permission&gt;</code></pre> 
+<p>&nbsp;</p>
