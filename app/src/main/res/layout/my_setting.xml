@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:minHeight="50dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/home_tour_close"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:src="@mipmap/public_fanhui"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:id="@+id/home_top_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="17sp"
+            android:textColor="@android:color/white"
+            />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@android:color/white"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:textSize="15dp"
+                    android:textColor="@android:color/black"
+                    android:text="修改头像" />
+                <com.zq.myinterfacepictureupload.ZQRoundOvalImageView
+                    android:id="@+id/my_setting_txlehs"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/zhangwo_hometop1"
+                    />
+
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/my_setting_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/white"
+                >
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="意见反馈"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="12dp"
+                    android:textColor="@android:color/black"
+                    />
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/sign_close"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="55dp"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="退出"
+        android:textColor="#FFFFFF"
+        android:textSize="12dp" />
+</LinearLayout>
