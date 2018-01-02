@@ -1,4 +1,4 @@
-#  Android自定义ImageView实现图片圆形 ，椭圆和矩形圆角显示
+###  Android自定义ImageView实现图片圆形 ，椭圆和矩形圆角显示
 <p>Android中的ImageView只能显示矩形的图片，为了用户体验更多，Android实现圆角矩形，圆形或者椭圆等图形，一般通过自定义ImageView来实现，首先获取到图片的Bitmap，然后通过<strong>Paint</strong>和<strong>onDraw</strong>（）进行圆形图片显示。</p> 
 <p>效果图：</p> 
 <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img alt="" height="605" src="https://static.oschina.net/uploads/space/2016/1125/155928_E964_2945455.png" width="311"></p> 
